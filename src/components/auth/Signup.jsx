@@ -45,7 +45,7 @@ export default function Signup (props) {
     <div className = "d-flex justify-content-center align-items-center" style={{ height: "80vh" }}>
       <Card style={{ width: "35rem", padding: "4rem", height: "auto" }}>
         <Card.Body>
-          <Card.Title className="text-center fs-1">Login</Card.Title>
+          <Card.Title className="text-center fs-1">Sign Up!</Card.Title>
           <Form>
             <Form.Group as={Row}>
               <Form.Label htmlFor="username">Username:</Form.Label>
@@ -62,7 +62,7 @@ export default function Signup (props) {
               <Form.Control type="password" id="confirmPassword" ref={confirmPwdRef} />
             </Form.Group>
             <p></p>
-            <Button type="submit" variant="primary" className="justify-content-center w-100" onClick={handleSignup}>Sign In</Button>
+            <Button type="submit" variant="primary" className="justify-content-center w-100" onClick={handleSignup}>Register Account</Button>
           </Form>
         </Card.Body>
       </Card>
