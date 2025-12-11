@@ -1,19 +1,39 @@
 import { Card } from "react-bootstrap";
-import { useNavigate } from "react-router"
+import { useNavigate } from "react-router-dom";
 
+export default function RecipeCard(props) {
+  const navigate = useNavigate();
+  const tags = props.tags?.map(tag => `#${tag}`).join(" ");
 
-export default function RecipeCard (props) {
+  const handleClick = () => {
+    // Use recipe name instead of id
+    navigate(`/recipe/${encodeURIComponent(props.name)}`, { state: { recipeName: props.name } });
+  };
 
-    const nav = useNavigate();
-    const tags = props.tags.reduce((acc, tag) => acc + " #" + tag, "");
-
-    return <Card style={{ width: '18rem', margin: '10px' }} onClick={ () => nav("/recipe") }>
-        <Card.Header>This will be an image</Card.Header>
-        <Card.Body>
-            <Card.Title>{props.name}</Card.Title>
-            <Card.Text>Created by {props.chef}
-            <br/>{tags}
-            <br/>Rating: {props.rating} stars</Card.Text>
-        </Card.Body>
+  return (
+    <Card
+      style={{ width: "18rem", margin: "10px", cursor: "pointer" }}
+      onClick={handleClick}
+    >
+      <Card.Img
+        variant="top"
+        src={props.image}
+        alt={props.alt}
+        style={{
+          height: "180px",
+          objectFit: "cover"
+        }}
+      />
+      <Card.Body>
+        <Card.Title>{props.name}</Card.Title>
+        <Card.Text>
+          Created by {props.chef}
+          <br />
+          {tags}
+          <br />
+          Rating: {props.rating} stars
+        </Card.Text>
+      </Card.Body>
     </Card>
+  );
 }

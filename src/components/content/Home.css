@@ -1,0 +1,81 @@
+.carousel-wrapper {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Full-height rectangular controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;                /* hidden by default */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show controls only when hovering over the carousel */
+.carousel-wrapper:hover .carousel-control-prev,
+.carousel-wrapper:hover .carousel-control-next {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Custom arrow icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+  border: solid #000;       /* black arrows */
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 10px;
+  opacity: 0;               /* hidden by default */
+  transition: opacity 0.3s ease;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;          /* center the carousel */
+  max-width: 1200px;       /* optional: cap width for large screens */
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center; /* center cards inside each slide */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.carousel-wrapper:hover .carousel-control-prev-icon,
+.carousel-wrapper:hover .carousel-control-next-icon {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon {
+  transform: rotate(135deg);
+}
+
+.carousel-control-next-icon {
+  transform: rotate(-45deg);
+}
+
+/* Indicators below carousel */
+.carousel-indicators {
+  position: relative;
+  bottom: -10px;
+  margin-top: 1rem;
+}

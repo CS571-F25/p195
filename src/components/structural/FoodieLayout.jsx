@@ -14,9 +14,10 @@ function FoodieLayout(props) {
             {/* Top Navigation Bar */}
             <Navbar bg="dark" variant="dark">
                 <Container fluid>
-                    <Navbar.Brand as={Link} to="/">Foodie</Navbar.Brand>
-                    <Nav className="me-auto">
+                    <Navbar.Brand as={Link} to="/" className="me-auto px-3">Foodie</Navbar.Brand>
+                    <Nav className="ms-auto px-3">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/explore">Explore</Nav.Link>
                         { !loginStatus && <>
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
@@ -25,6 +26,7 @@ function FoodieLayout(props) {
                             <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
                         }
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
+                        <Nav.Link as={Link} to="/addpost">New Post</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
